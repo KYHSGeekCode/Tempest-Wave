@@ -50,6 +50,12 @@ namespace TempestWave.Core.UI
                 rt.anchorMax = saAnchorMax;
             }
 
+            // Debug
+            //foreach(RectTransform rt in safeAreaList)
+            //{
+            //    rt.anchorMin += new Vector2(50f / 1280, 0);
+            //    rt.anchorMax -= new Vector2(50f / 1280, 0);
+            //}
         }
 
         private void Awake()

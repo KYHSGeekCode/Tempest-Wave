@@ -34,23 +34,26 @@ namespace TempestWave
             float width, height, safeWidth, safeHeight;
             if (scaler.matchWidthOrHeight.Equals(0))
             {
-                width = 1280 * (originWidth / originHeight);
-                height = 1280;
-                width = 720;
-                height = 720 * (originHeight / originWidth);
+                width = 1280;
+                height = 1280 * (originHeight / originWidth);
             }
             else
             {
-                width = 720;
-                height = 720 * (originHeight / originWidth);
+                width = 720 * (originWidth / originHeight);
+                height = 720;
             }
             safeWidth = width * (safeOriginWidth / originWidth);
             safeHeight = height * (safeOriginHeight / originHeight);
 
             foreach (RectTransform curRect in NotchSizeScale)
             {
-                curRect.sizeDelta = new Vector2(curRect.sizeDelta.x, curRect.sizeDelta.y + (height - safeHeight) / 2);
+                curRect.sizeDelta += new Vector2((width - safeWidth) / 2, (height - safeHeight) / 2);
             }
+
+            //foreach(RectTransform curRect in NotchSizeScale)
+            //{
+            //    curRect.sizeDelta += new Vector2(50, 0);
+            //}
         }
     }
 }
