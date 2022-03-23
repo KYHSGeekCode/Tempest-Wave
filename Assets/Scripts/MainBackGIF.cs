@@ -21,6 +21,8 @@ namespace TempestWave
             gameObject.GetComponent<RawImage>().texture = seperated[Mathf.RoundToInt(cnt)];
             cnt += 30 * Time.deltaTime;
             if (cnt >= 42.5f) { cnt = 0f; }
+
         }
+
     }
 }

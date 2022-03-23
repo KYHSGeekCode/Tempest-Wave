@@ -47,3 +47,4 @@ sysinfo.txt
 # Custom Setting
 [Dd]ocuments/
 *.collabignore
+/TW-2.1.00-v110.symbols.zip
